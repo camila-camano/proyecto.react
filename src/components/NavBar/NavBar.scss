@@ -3,4 +3,22 @@
   justify-content: space-around;
   align-items: center;
   background-color: blueviolet;
+
+  h2 {
+    font-size: 30px;
+    color: white;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    li {
+      margin: 10px;
+      text-transform: uppercase;
+      color: white;
+    }
+  }
 }

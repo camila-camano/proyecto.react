@@ -4,6 +4,7 @@ import "./NavBar.scss";
 export const NavBar = () => {
   return (
     <header className="navbar">
+      <h2>Titulo app</h2>
       <nav>
         <ul>
           <li>enlace 1</li>
