@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const ItemCount = ({ stock = 10, initial = 0 }) => {
+export const ItemCount = ({ stock = 50, initial = 0 }) => {
   const [cantidad, setCantidad] = useState(initial);
 
   const handleRestar = () => {
@@ -12,18 +12,14 @@ export const ItemCount = ({ stock = 10, initial = 0 }) => {
   };
 
   return (
-    <div className="m-4">
-      <button onClick={handleRestar} className="btn btn-outline-primary">
+    <div className="contador">
+      <button onClick={handleRestar} className="btn btn-dark">
         -
       </button>
-      <span className="mx-2">{cantidad}</span>
-      <button onClick={handleSumar} className="btn btn-primary">
+      <p className="mx-2">{cantidad}</p>
+      <button type="button" onClick={handleSumar} className="btn btn-dark">
         +
       </button>
-
-      <div>
-        <button className="btn btn-success my-2">Agregar</button>
-      </div>
     </div>
   );
 };
