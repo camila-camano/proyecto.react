@@ -7,9 +7,9 @@ export const NavBar = () => {
       <h2>Titulo app</h2>
       <nav>
         <ul>
-          <li>enlace 1</li>
-          <li>enlace 2</li>
-          <li>enlace 3</li>
+          <li>Enlace 1</li>
+          <li>Enlace 2</li>
+          <li>Enlace 3</li>
         </ul>
       </nav>
       <CartWidget />
