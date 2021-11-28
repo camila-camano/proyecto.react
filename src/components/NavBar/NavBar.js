@@ -6,15 +6,23 @@ import "./NavBar.scss";
 export const NavBar = () => {
   return (
     <header className="navbar">
-      <h2>Titulo app</h2>
+      <Link to="/">
+        <h2>Titulo app</h2>
+      </Link>
+
       <nav>
         <ul>
-          <li>HOMBRE</li>
-          <li>MUJER</li>
-          <li>Enlace 3</li>
+          <li>
+            <Link to="/category/men">HOMBRE</Link>
+          </li>
+          <li>
+            <Link to="/category/women">MUJER</Link>
+          </li>
         </ul>
       </nav>
-      <CartWidget />
+      <Link to="cart">
+        <CartWidget />
+      </Link>
     </header>
   );
 };
