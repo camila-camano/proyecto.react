@@ -1,6 +1,4 @@
 import React from "react";
-//import { useCounter } from "../../hooks/useCounter";
-//import { ItemCount } from "../ItemCount/ItemCount";
 
 export const ItemDetail = ({ item }) => {
   return (
