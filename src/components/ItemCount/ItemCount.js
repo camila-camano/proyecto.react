@@ -1,18 +1,48 @@
 import React, { useState } from "react";
 import { useCounter } from "../../Hooks/useCounter";
+export const ItemCount = ({
+  increment,
+  decrement,
+  onAdd,
+  counter,
+  min,
+  max,
+}) => {
+  // const btnRestarConfig = {
+  //     onClick: decrement,
+  //     className: `btn ${counter === min ? "btn-outline-danger" : "btn-outline-primary"}`
+  // }
 
-export const ItemCount = ({ stock = 50, initial = 0 }) => {
-  const { counter, increment, decrement } = useCounter(initial, stock, 0);
+  const btnStyles = {
+    btnRestar: {
+      onClick: decrement,
+      className: `btn ${
+        counter === min ? "btn-outline-danger" : "btn-outline-primary"
+      }`,
+    },
+    btnSumar: {
+      onClick: increment,
+      className: counter === max ? "btn btn-danger" : "btn btn-primary",
+    },
+  };
 
   return (
-    <div className="contador">
-      <button onClick={decrement} className="btn btn-dark">
-        -
-      </button>
-      <p className="mx-2">{counter}</p>
-      <button type="button" onClick={increment} className="btn btn-dark">
-        +
-      </button>
+    <div className="m-4">
+      <button {...btnStyles.btnRestar}>-</button>
+
+      <span className="mx-2">{counter}</span>
+
+      <button {...btnStyles.btnSumar}>+</button>
+
+      <div>
+        <button
+          className="btn btn-success my-2"
+          disabled={counter === min}
+          onClick={onAdd}
+        >
+          Agregar
+        </button>
+      </div>
     </div>
   );
 };
