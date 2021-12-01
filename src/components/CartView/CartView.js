@@ -20,8 +20,7 @@ export const CartView = () => {
   // return de la vista normal
   return (
     <div className="container my-5">
-      <h2>Tu compra</h2>
-      <hr />
+      <h2>Su compra:</h2>
 
       {cart.map((el) => (
         <div key={el.id}>
@@ -36,8 +35,6 @@ export const CartView = () => {
           </button>
         </div>
       ))}
-
-      <hr />
 
       <h4>Total: ${totalCompra()}</h4>
 

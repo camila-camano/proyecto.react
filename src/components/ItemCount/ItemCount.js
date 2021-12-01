@@ -5,8 +5,8 @@ export const ItemCount = ({
   decrement,
   onAdd,
   counter,
-  min,
-  max,
+  minimo,
+  maximo,
 }) => {
   // const btnRestarConfig = {
   //     onClick: decrement,
@@ -17,12 +17,12 @@ export const ItemCount = ({
     btnRestar: {
       onClick: decrement,
       className: `btn ${
-        counter === min ? "btn-outline-danger" : "btn-outline-primary"
+        counter === minimo ? "btn-outline-danger" : "btn-outline-primary"
       }`,
     },
     btnSumar: {
       onClick: increment,
-      className: counter === max ? "btn btn-danger" : "btn btn-primary",
+      className: counter === maximo ? "btn btn-danger" : "btn btn-primary",
     },
   };
 
@@ -37,7 +37,7 @@ export const ItemCount = ({
       <div>
         <button
           className="btn btn-success my-2"
-          disabled={counter === min}
+          disabled={counter === minimo}
           onClick={onAdd}
         >
           Agregar
