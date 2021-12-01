@@ -9,6 +9,7 @@ export const stock = [
     category: "men",
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     rating: { rate: 3.9, count: 120 },
+    stock: 20,
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const stock = [
     image:
       "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
     rating: { rate: 4.1, count: 259 },
+    stock: 20,
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const stock = [
     category: "men",
     image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
     rating: { rate: 4.7, count: 500 },
+    stock: 5,
   },
   {
     id: 4,
@@ -41,6 +44,7 @@ export const stock = [
     category: "women",
     image: "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
     rating: { rate: 2.9, count: 340 },
+    stock: 6,
   },
   {
     id: 5,
@@ -51,5 +55,6 @@ export const stock = [
     category: "women",
     image: "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
     rating: { rate: 4.7, count: 130 },
+    stock: 13,
   },
 ];

@@ -8,7 +8,7 @@ import { ItemCount } from "../ItemCount/ItemCount";
 export const ItemDetail = ({ item }) => {
   const navigate = useNavigate();
 
-  const { counter, increment, decrement } = useCounter(0, 20, 0);
+  const { counter, increment, decrement } = useCounter(0, item.stock, 0);
 
   const handleVolver = () => {
     navigate(-1);
@@ -38,11 +38,11 @@ export const ItemDetail = ({ item }) => {
           onAdd={handleAgregar}
           counter={counter}
           min={-1}
-          max={10}
+          max={item.stock}
         />
       ) : (
-        <Link to="/cart" className="btn btn-success my-3">
-          Terminar mi compra
+        <Link to="/cart" className="btn btn-secondary my-3">
+          Terminar con mi compra
         </Link>
       )}
       <button className="btn btn-primary" onClick={handleVolver}>
