@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { pedirItem } from "../../helpers/pedirDatos";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
+import { collection, doc, getDoc } from "firebase/firestore/lite";
+import { db } from "../../firebase/config";
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -12,8 +14,16 @@ export const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    pedirItem(Number(itemId))
-      .then((resp) => setItem(resp))
+    const productosRef = collection(db, "stock");
+    const docRef = doc(productosRef, itemId);
+
+    getDoc(docRef)
+      .then((doc) => {
+        setItem({
+          id: doc.id,
+          ...doc.data(),
+        });
+      })
       .finally(() => {
         setLoading(false);
       });
