@@ -5,10 +5,10 @@ export const Item = ({ item }) => {
   return (
     <div className="col-3 m-2">
       <h3>{item.title}</h3>
-      <p>Precio: ${item.price}</p>
-      <p>Categoría: {item.category}</p>
+      <p>Price: ${item.price}</p>
+      <p>Category: {item.category}</p>
       <Link to={`/detail/${item.id}`} className="btn btn-primary">
-        Ver más
+        More
       </Link>
     </div>
   );

@@ -29,8 +29,8 @@ export const ItemDetail = ({ item }) => {
     <div className="container m-5">
       <img src={item.image} alt={item.tile} />
       <h3>{item.title}</h3>
-      <p>Precio: ${item.price}</p>
-      <p>{item.description}</p>
+      <p>Price: ${item.price}</p>
+      <p>Description: {item.description}</p>
       {!isInCart(item.id) ? (
         <ItemCount
           increment={increment}
@@ -42,11 +42,11 @@ export const ItemDetail = ({ item }) => {
         />
       ) : (
         <Link to="/cart" className="btn btn-secondary my-3">
-          Terminar con mi compra
+          Go to cart
         </Link>
       )}
       <button className="btn btn-primary" onClick={handleVolver}>
-        Volver
+        Go back
       </button>
     </div>
   );

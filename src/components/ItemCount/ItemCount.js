@@ -40,7 +40,7 @@ export const ItemCount = ({
           disabled={counter === minimo}
           onClick={onAdd}
         >
-          Agregar
+          Add to cart
         </button>
       </div>
     </div>

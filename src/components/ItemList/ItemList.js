@@ -6,7 +6,7 @@ export const ItemList = ({ items }) => {
     <div>
       <div>
         <div className="container row my-3">
-          <h2>Productos</h2>
+          <h2>Products</h2>
           {items.map((el) => (
             <Item key={el.id} item={el} />
           ))}

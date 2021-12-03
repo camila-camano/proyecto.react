@@ -13,10 +13,13 @@ export const NavBar = () => {
       <nav>
         <ul>
           <li>
-            <Link to="/category/men">HOMBRE</Link>
+            <Link to="/category/men">MEN</Link>
           </li>
           <li>
-            <Link to="/category/women">MUJER</Link>
+            <Link to="/category/women">WOMEN</Link>
+          </li>
+          <li>
+            <Link to="/category/accesory">ACCESORIES</Link>
           </li>
         </ul>
       </nav>
