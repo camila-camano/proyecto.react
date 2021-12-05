@@ -17,13 +17,9 @@ export const Checkout = () => {
   const { cart, totalCompra, vaciarCarrito } = useContext(CartContext);
   const [orderId, setOrderId] = useState(null);
 
-  const generarOrden = () => {
+  const generarOrden = (buyer) => {
     const order = {
-      buyer: {
-        name: "pepino",
-        mail: "asdsd.com",
-        phone: "011",
-      },
+      buyer: buyer,
       items: cart,
       total: totalCompra(),
       date: Timestamp.fromDate(new Date()),
@@ -34,6 +30,24 @@ export const Checkout = () => {
       setOrderId(res.id);
       vaciarCarrito();
     });
+  };
+
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleInputChange = (e) => {
+    setValues({
+      ...values,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    generarOrden(values);
   };
 
   return (
@@ -49,8 +63,35 @@ export const Checkout = () => {
       ) : (
         <>
           <h2>Checkout</h2>
-
-          <button onClick={generarOrden}>Buy</button>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={values.name}
+              onChange={handleInputChange}
+              name="name"
+              placeholder="Name and surname"
+              className="form-control my-2"
+            ></input>
+            <input
+              type="email"
+              value={values.email}
+              onChange={handleInputChange}
+              name="email"
+              placeholder="Email"
+              className="form-control my-2"
+            ></input>
+            <input
+              type="text"
+              value={values.phone}
+              onChange={handleInputChange}
+              name="phone"
+              placeholder="Phone Number"
+              className="form-control my-2"
+            ></input>
+            <button type="submit" className="btn btn-success">
+              Next
+            </button>
+          </form>
         </>
       )}
     </div>
