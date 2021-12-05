@@ -3,6 +3,7 @@ import { useParams } from "react-router";
 import { ItemDetail } from "../ItemDetail/ItemDetail";
 import { collection, doc, getDoc } from "firebase/firestore/lite";
 import { db } from "../../firebase/config";
+import { Loader } from "../Loader/Loader";
 
 export const ItemDetailContainer = () => {
   const [item, setItem] = useState(null);
@@ -28,5 +29,5 @@ export const ItemDetailContainer = () => {
       });
   }, []);
 
-  return <div>{loading ? <h2>Cargando</h2> : <ItemDetail item={item} />}</div>;
+  return <div>{loading ? <Loader /> : <ItemDetail item={item} />}</div>;
 };

@@ -3,6 +3,7 @@ import { ItemList } from "../ItemList/ItemList";
 import { useParams } from "react-router";
 import { db } from "../../firebase/config";
 import { collection, getDocs, query, where } from "@firebase/firestore/lite";
+import { Loader } from "../Loader/Loader";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -33,7 +34,5 @@ export const ItemListContainer = () => {
       });
   }, [categoryId]);
 
-  return (
-    <div>{loading ? <h2>Cargando...</h2> : <ItemList items={items} />}</div>
-  );
+  return <div>{loading ? <Loader /> : <ItemList items={items} />}</div>;
 };
