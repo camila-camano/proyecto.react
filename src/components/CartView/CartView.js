@@ -42,14 +42,16 @@ export const CartView = () => {
         </div>
       ))}
 
-      <h4>Total: ${totalCompra()}</h4>
+      <div className="finish">
+        <h4>Total: ${totalCompra()}</h4>
 
-      <button onClick={vaciarCarrito} className="btn btn-danger">
-        Empty shopping cart
-      </button>
-      <Link to="/checkout" className="btn btn-success mx-3">
-        Buy
-      </Link>
+        <button onClick={vaciarCarrito} className="btn btn-danger">
+          Empty shopping cart
+        </button>
+        <Link to="/checkout" className="btn btn-success mx-3">
+          Buy
+        </Link>
+      </div>
     </div>
   );
 };
