@@ -10,6 +10,7 @@ export const ItemListContainer = () => {
   const [loading, setLoading] = useState(false);
 
   const { categoryId } = useParams();
+  console.log(categoryId);
 
   useEffect(() => {
     setLoading(true);
@@ -26,7 +27,6 @@ export const ItemListContainer = () => {
             ...doc.data(),
           };
         });
-        console.log(productos);
         setItems(productos);
       })
       .finally(() => {

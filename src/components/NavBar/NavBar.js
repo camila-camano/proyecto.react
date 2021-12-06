@@ -7,7 +7,7 @@ export const NavBar = () => {
   return (
     <header className="navbar">
       <Link to="/">
-        <h2>Titulo app</h2>
+        <h2>React Store</h2>
       </Link>
 
       <nav>
@@ -16,7 +16,9 @@ export const NavBar = () => {
             <Link to="/category/men">MEN</Link>
           </li>
           <li>
-            <Link to="/category/women">WOMEN</Link>
+            <Link to="/category/women" className="item">
+              WOMEN
+            </Link>
           </li>
           <li>
             <Link to="/category/accesory">ACCESORIES</Link>

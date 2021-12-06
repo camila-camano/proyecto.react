@@ -2,11 +2,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: blueviolet;
+  background-color: #003566;
+  background-image: linear-gradient(#003566, #000814);
+
+  height: 100px;
 
   h2 {
-    font-size: 30px;
+    font-size: 50px;
     color: white;
+    text-decoration-line: none;
+    &:hover {
+      color: #bee3db;
+    }
   }
 
   ul {
@@ -16,9 +23,17 @@
     justify-content: right;
     align-items: center;
     li {
-      margin: 10px;
-      text-transform: uppercase;
-      color: white;
+      list-style-type: none;
+      text-decoration: none;
+      a {
+        text-decoration: none;
+        margin: 10px;
+        text-transform: uppercase;
+        color: white;
+        &:hover {
+          color: #bee3db;
+        }
+      }
     }
   }
 }
