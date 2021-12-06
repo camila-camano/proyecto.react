@@ -1,0 +1,15 @@
+.item-detail-container {
+  display: flex;
+  align-items: center;
+  .item-detail-image {
+    width: 350px;
+    margin: 10px;
+    padding: 10px;
+  }
+  .card2 {
+    justify-content: center;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}

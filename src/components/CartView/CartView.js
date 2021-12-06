@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BsFillTrashFill } from "react-icons/bs";
 import { CartContext } from "../../context/CartContext";
+import "./CartView.scss";
 
 export const CartView = () => {
   const { cart, vaciarCarrito, totalCompra, removerDelCarrito } =
@@ -23,16 +24,21 @@ export const CartView = () => {
       <h2>Your cart:</h2>
 
       {cart.map((el) => (
-        <div key={el.id}>
-          <h3>{el.nombre}</h3>
-          <p>Price: ${el.precio}</p>
-          <p>Amount: {el.cantidad}</p>
-          <button
-            className="btn btn-danger"
-            onClick={() => removerDelCarrito(el.id)}
-          >
-            <BsFillTrashFill />
-          </button>
+        <div key={el.id} className="checkout-item">
+          <div>
+            <h3>{el.nombre}</h3>
+            <p>Price: ${el.precio}</p>
+            <p>Amount: {el.cantidad}</p>
+          </div>
+
+          <div className="btn-delete-item">
+            <button
+              className="btn btn-danger "
+              onClick={() => removerDelCarrito(el.id)}
+            >
+              <BsFillTrashFill />
+            </button>
+          </div>
         </div>
       ))}
 

@@ -34,5 +34,9 @@ export const ItemListContainer = () => {
       });
   }, [categoryId]);
 
-  return <div>{loading ? <Loader /> : <ItemList items={items} />}</div>;
+  return (
+    <div>
+      {loading ? <Loader /> : <ItemList items={items} category={categoryId} />}
+    </div>
+  );
 };
