@@ -1,7 +1,7 @@
-import { CartWidget } from "../CartWidget/CartWidget";
-
-import { Link } from "react-router-dom";
 import "./NavBar.scss";
+
+import { CartWidget } from "../CartWidget/CartWidget";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   return (
@@ -9,7 +9,6 @@ export const NavBar = () => {
       <Link to="/">
         <h2>React Store</h2>
       </Link>
-
       <nav>
         <ul>
           <li>

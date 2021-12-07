@@ -1,17 +1,20 @@
+import "./Checkout.scss";
+
 import React, { useContext, useState } from "react";
-import { CartContext } from "../../context/CartContext";
 import {
   Timestamp,
-  collection,
   addDoc,
+  collection,
+  documentId,
   getDocs,
-  writeBatch,
   query,
   where,
-  documentId,
+  writeBatch,
 } from "firebase/firestore/lite";
-import { db } from "../../firebase/config";
+
+import { CartContext } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import { db } from "../../firebase/config";
 
 export const Checkout = () => {
   const { cart, totalCompra, vaciarCarrito } = useContext(CartContext);
@@ -54,16 +57,18 @@ export const Checkout = () => {
     <div>
       {orderId ? (
         <>
-          <h2>Gracias por su compra!</h2>
-          <p>Your order number is: {orderId}</p>
-          <Link to="/" className="btn btn-primary">
-            Homepage
-          </Link>
+          <div className="container success">
+            <h2>Gracias por su compra!</h2>
+            <p>Your order number is: {orderId}</p>
+            <Link to="/" className="btn btn-primary">
+              Homepage
+            </Link>
+          </div>
         </>
       ) : (
         <>
-          <h2>Checkout</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="form">
+            <h2>Checkout</h2>
             <input
               type="text"
               value={values.name}
@@ -88,7 +93,7 @@ export const Checkout = () => {
               placeholder="Phone Number"
               className="form-control my-2"
             ></input>
-            <button type="submit" className="btn btn-success">
+            <button type="submit" className="btn btn-success boton">
               Next
             </button>
           </form>
