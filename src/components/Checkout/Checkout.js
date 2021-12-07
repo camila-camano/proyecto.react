@@ -58,7 +58,7 @@ export const Checkout = () => {
       {orderId ? (
         <>
           <div className="container success">
-            <h2>Gracias por su compra!</h2>
+            <h2>Thank you for your purchase!</h2>
             <p>Your order number is: {orderId}</p>
             <Link to="/" className="btn btn-primary">
               Homepage
